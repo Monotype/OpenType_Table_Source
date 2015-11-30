@@ -9,8 +9,8 @@
     
     <title>Source Data Format for OpenType Layout Tables &mdash; OpenType Layout Table Source 1.0.0 Documentation</title>
     
-    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,14 +21,14 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/bizstyle.js"></script>
     <link rel="top" title="OpenType Layout Table Source 1.0.0 Documentation" href="#" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <script type="text/javascript" src="static/css3-mediaqueries.js"></script>
     <![endif]-->
   </head>
   <body role="document">
@@ -337,7 +337,7 @@ in the OpenType specification.</p>
 <p>The list of lookups contains the label of one or more lookup tables, separated
 by commas. If for some reason (it is sometimes necessary) to declare a feature
 without lookups, then a hyphen takes in the position of the list.</p>
-<p><a class="reference download internal" href="_downloads/featuretable.txt"><code class="xref download docutils literal"><span class="pre">Feature</span> <span class="pre">table</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/featuretable.txt"><code class="xref download docutils literal"><span class="pre">Feature</span> <span class="pre">table</span> <span class="pre">example</span></code></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Normally features are expected to be listed in alphabetical order in feature lists, in the same way that they are stored in the font. But it is often easier to have a source file with the features in the order in which they are applied, i.e. following the lookup order. Features are expected to be sorted when the feature list is compiled.</p>
@@ -373,7 +373,7 @@ sometimes necessary to have an entry of a particular script in either GPOS or
 GSUB, although there are no features using that table, but without the entry
 the features in the other table are ignored. In that case the entry in the list
 of features field can be empty as well.</p>
-<p><a class="reference download internal" href="_downloads/scripttable.txt"><code class="xref download docutils literal"><span class="pre">Script</span> <span class="pre">table</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/scripttable.txt"><code class="xref download docutils literal"><span class="pre">Script</span> <span class="pre">table</span> <span class="pre">example</span></code></a></p>
 <hr class="docutils" />
 <div class="section" id="single-substitution">
 <span id="gsub-type-1"></span><h4>single (substitution)<a class="headerlink" href="#single-substitution" title="Permalink to this headline">¶</a></h4>
@@ -381,7 +381,7 @@ of features field can be empty as well.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;input Gl&gt; &lt;T&gt; &lt;output Gl&gt;
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gsubsingle.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">single</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubsingle.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">single</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="multiple-substitution">
 <span id="gsub-type-2"></span><h4>multiple (substitution)<a class="headerlink" href="#multiple-substitution" title="Permalink to this headline">¶</a></h4>
@@ -389,7 +389,7 @@ of features field can be empty as well.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;input Gl&gt; &lt;T&gt; &lt;output Gl 1&gt; &lt;T&gt; &lt;output Gl 2&gt; ....
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gsubmultiple.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">multiple</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubmultiple.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">multiple</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="alternate-substitution">
 <span id="gsub-type-3"></span><h4>alternate (substitution)<a class="headerlink" href="#alternate-substitution" title="Permalink to this headline">¶</a></h4>
@@ -397,7 +397,7 @@ of features field can be empty as well.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;input Gl&gt; &lt;T&gt; &lt;output Gl 1&gt; &lt;T&gt; &lt;output Gl 2&gt; ....
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gsubalternate.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">alternate</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubalternate.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">alternate</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="ligature-substitution">
 <span id="gsub-type-4"></span><h4>ligature (substitution)<a class="headerlink" href="#ligature-substitution" title="Permalink to this headline">¶</a></h4>
@@ -405,7 +405,7 @@ of features field can be empty as well.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;ligature Gl&gt; &lt;T&gt; &lt;input Gl 1&gt; &lt;T&gt; &lt;input Gl 2&gt; ....
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gsubligature.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">ligature</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubligature.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">ligature</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="single-positioning">
 <span id="gpos-type-1"></span><h4>single (positioning)<a class="headerlink" href="#single-positioning" title="Permalink to this headline">¶</a></h4>
@@ -415,7 +415,7 @@ the <a class="reference internal" href="#value"><span>value</span></a>:</p>
 <div class="highlight-python"><div class="highlight"><pre>position type &lt;T&gt; &lt;Gl&gt; &lt;T&gt; value
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gpossingle.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">single</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gpossingle.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">single</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="pair-or-kernset-positioning">
 <span id="gpos-type-2"></span><h4>pair or kernset (positioning)<a class="headerlink" href="#pair-or-kernset-positioning" title="Permalink to this headline">¶</a></h4>
@@ -453,9 +453,9 @@ assigned to another class.</p>
 <p>A <code class="docutils literal"><span class="pre">kernset</span></code> is a combination of the <code class="docutils literal"><span class="pre">glyph</span></code> and <code class="docutils literal"><span class="pre">class</span></code> formats: a
 subtable of glyph pairs precedes a subtable of class pairs, with the glyph
 pairs acting as &#8220;exceptions&#8221; to the class pair definitions.</p>
-<p><a class="reference download internal" href="_downloads/gpospairglyph.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">pair</span> <span class="pre">(glyph)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="_downloads/gpospairclass.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">pair</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="_downloads/gposkernset.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">kernset</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gpospairglyph.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">pair</span> <span class="pre">(glyph)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gpospairclass.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">pair</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gposkernset.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">kernset</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="cursive-positioning">
 <span id="gpos-type-3"></span><h4>cursive (positioning)<a class="headerlink" href="#cursive-positioning" title="Permalink to this headline">¶</a></h4>
@@ -463,7 +463,7 @@ pairs acting as &#8220;exceptions&#8221; to the class pair definitions.</p>
 <div class="highlight-python"><div class="highlight"><pre>Anchor type &lt;T&gt; &lt;Gl&gt; &lt;T&gt; anchorCoordinate &lt;T&gt; pointIndex
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gposcursive.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">cursive</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gposcursive.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">cursive</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="mark-to-base-and-mark-to-mark-positioning">
 <span id="gpos-type-4"></span><h4>mark to base and mark to mark (positioning)<a class="headerlink" href="#mark-to-base-and-mark-to-mark-positioning" title="Permalink to this headline">¶</a></h4>
@@ -474,7 +474,7 @@ pairs acting as &#8220;exceptions&#8221; to the class pair definitions.</p>
 <p>In a mark to mark lookup, the marks that other marks are attached to (&#8220;base marks&#8221;) use the <code class="docutils literal"><span class="pre">base</span></code> keyword.</p>
 <p>In scripts such as the Indics where ligatures are used as single entities, accent positioning on these glyphs can be done with a mark to base rather than a mark to ligature lookup.</p>
 <p>Within a lookup marks can belong to one class only. If there is more than one class of marks, all base glyphs are expected to have an anchor for each class. For marks with several anchors or when base glyphs do not have anchors for all classes of marks, it is recommended to use separate lookups for the classes.</p>
-<p><a class="reference download internal" href="_downloads/gposmarktobase.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">mark</span> <span class="pre">to</span> <span class="pre">base/mark</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gposmarktobase.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">mark</span> <span class="pre">to</span> <span class="pre">base/mark</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="mark-to-ligature-positioning">
 <span id="gpos-type-5"></span><h4>mark to ligature (positioning)<a class="headerlink" href="#mark-to-ligature-positioning" title="Permalink to this headline">¶</a></h4>
@@ -537,8 +537,8 @@ coverage &lt;T&gt; 1,F-kern-lookup-label
 </pre></div>
 </div>
 <p>Note that in the rule there is no entry for the sequence, because there is only one sequence possible. Each coverage table has an index number, starting with zero for the first.</p>
-<p><a class="reference download internal" href="_downloads/contextclass.txt"><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="_downloads/contextcoverage.txt"><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(coverage)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/contextclass.txt"><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/contextcoverage.txt"><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(coverage)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="chained-substitution-and-positioning">
 <span id="gsub-gpos-chained"></span><h4>chained (substitution and positioning)<a class="headerlink" href="#chained-substitution-and-positioning" title="Permalink to this headline">¶</a></h4>
@@ -604,8 +604,8 @@ coverage &lt;T&gt; 1,F-kern-lookup-label
 </pre></div>
 </div>
 <p>Note that in the rule there is no entry for the sequence, because there is only one sequence possible. There can be any number of these coverage definitions. At least one inputcoverage table and at least one of the others are required.</p>
-<p><a class="reference download internal" href="_downloads/chainedclass.txt"><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="_downloads/chainedcoverage.txt"><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(coverage)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/chainedclass.txt"><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/chainedcoverage.txt"><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(coverage)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="reversechained-substitution">
 <span id="gsub-type-8"></span><h4>reversechained (substitution)<a class="headerlink" href="#reversechained-substitution" title="Permalink to this headline">¶</a></h4>
@@ -632,7 +632,7 @@ input glyph sequence goes from the end to start, opposite of other lookup
 types. This type is designed for Arabic and scripts like it where the shape of
 a glyph is determined by a following glyph. See the <a class="reference external" href="https://www.microsoft.com/typography/otspec/GSUB.htm#RCCS">OpenType specification</a> for more
 information.</p>
-<p><a class="reference download internal" href="_downloads/gsubreversechanined.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">reversechained</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubreversechanined.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">reversechained</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="shared-by-various-lookups">
 <h4>Shared by various lookups<a class="headerlink" href="#shared-by-various-lookups" title="Permalink to this headline">¶</a></h4>
@@ -769,7 +769,7 @@ class&#8221;). The syntax for defining glyph classes is:</p>
 class definition end
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gdefclasses.txt"><code class="xref download docutils literal"><span class="pre">glyph</span> <span class="pre">class</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefclasses.txt"><code class="xref download docutils literal"><span class="pre">glyph</span> <span class="pre">class</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="attachment-point-list">
 <h4>Attachment Point List<a class="headerlink" href="#attachment-point-list" title="Permalink to this headline">¶</a></h4>
@@ -781,7 +781,7 @@ reference followed by one or more point numbers, separated by &lt;T&gt;:</p>
 attachment list end
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gdefattach.txt"><code class="xref download docutils literal"><span class="pre">attachment</span> <span class="pre">point</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefattach.txt"><code class="xref download docutils literal"><span class="pre">attachment</span> <span class="pre">point</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="ligature-caret-lists">
 <h4>Ligature Caret Lists<a class="headerlink" href="#ligature-caret-lists" title="Permalink to this headline">¶</a></h4>
@@ -798,7 +798,7 @@ x-coordinate values, defining the caret positions:</p>
 carets end
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gdefligcaret.txt"><code class="xref download docutils literal"><span class="pre">ligature</span> <span class="pre">caret</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefligcaret.txt"><code class="xref download docutils literal"><span class="pre">ligature</span> <span class="pre">caret</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="mark-attachment-classes">
 <h4>Mark Attachment Classes<a class="headerlink" href="#mark-attachment-classes" title="Permalink to this headline">¶</a></h4>
@@ -813,7 +813,7 @@ to a single mark attachment class.</p>
 class definition end
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gdefmarkattach.txt"><code class="xref download docutils literal"><span class="pre">mark</span> <span class="pre">attachment</span> <span class="pre">class</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefmarkattach.txt"><code class="xref download docutils literal"><span class="pre">mark</span> <span class="pre">attachment</span> <span class="pre">class</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="mark-glyph-sets-mark-filtering-sets">
 <h4>Mark Glyph Sets (Mark Filtering Sets)<a class="headerlink" href="#mark-glyph-sets-mark-filtering-sets" title="Permalink to this headline">¶</a></h4>
@@ -829,7 +829,7 @@ classes, only a single set may be specified per lookup.</p>
 set definition end
 </pre></div>
 </div>
-<p><a class="reference download internal" href="_downloads/gdefmarkfilter.txt"><code class="xref download docutils literal"><span class="pre">markfilter</span> <span class="pre">set</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefmarkfilter.txt"><code class="xref download docutils literal"><span class="pre">markfilter</span> <span class="pre">set</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 </div>
 </div>
