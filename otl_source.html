@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Source Data Format for OpenType Layout Tables &mdash; OpenType Layout Table Source 1.0.0 Documentation</title>
+    <title>Source Data Format for OpenType Layout Tables &#8212; OpenType Layout Table Source 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -25,7 +25,8 @@
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
     <script type="text/javascript" src="static/bizstyle.js"></script>
-    <link rel="top" title="OpenType Layout Table Source 1.0.0 Documentation" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="OpenType Layout Table Source 1.0.0 documentation" href="#" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="static/css3-mediaqueries.js"></script>
@@ -35,7 +36,7 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">OpenType Layout Table Source 1.0.0 Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">OpenType Layout Table Source 1.0.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -75,6 +76,10 @@
 <li><a class="reference internal" href="#mark-glyph-sets-mark-filtering-sets">Mark Glyph Sets (Mark Filtering Sets)</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#other-source-files">Other Source Files</a><ul>
+<li><a class="reference internal" href="#cmap-table">cmap Table</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -84,14 +89,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -121,6 +123,7 @@
 <li><a class="reference internal" href="#feature-table" id="id6">Feature Table</a></li>
 <li><a class="reference internal" href="#script-table" id="id7">Script Table</a></li>
 <li><a class="reference internal" href="#gdef-table" id="id8">GDEF Table</a></li>
+<li><a class="reference internal" href="#other-source-files" id="id9">Other Source Files</a></li>
 </ul>
 </div>
 <div class="section" id="introduction">
@@ -146,17 +149,17 @@ In this document tabs are referred to by <strong>&lt;T&gt;</strong>.</p>
 <p>The OpenType Layout (OTL) source files may be used to represent three tables: GSUB, GPOS, and GDEF.</p>
 <dl class="docutils">
 <dt>The first line of a text file representing a GSUB is:</dt>
-<dd><div class="first last highlight-none"><div class="highlight"><pre>FontDame GSUB table
+<dd><div class="first last highlight-none"><div class="highlight"><pre><span></span>FontDame GSUB table
 </pre></div>
 </div>
 </dd>
 <dt>The first line of a text file representing a GPOS is:</dt>
-<dd><div class="first last highlight-none"><div class="highlight"><pre>FontDame GPOS table
+<dd><div class="first last highlight-none"><div class="highlight"><pre><span></span>FontDame GPOS table
 </pre></div>
 </div>
 </dd>
 <dt>The first line of a text file representing a GDEF is:</dt>
-<dd><div class="first last highlight-none"><div class="highlight"><pre>FontDame GDEF table
+<dd><div class="first last highlight-none"><div class="highlight"><pre><span></span>FontDame GDEF table
 </pre></div>
 </div>
 </dd>
@@ -169,7 +172,7 @@ by a block starting with a keyword. Any line outside these blocks, not starting
 with a keyword, is ignored by the compiler and can be used for comments.</p>
 <p>There is one additional keyword for the GPOS table only. The EM keyword at the beginning of the file, before the first lookup, allows to declare the EM-square that the font unit values are referring to and should allow the transfer of values between fonts with different EM resolutions. Without the declaration of the EM within the GPOS text file, it is assumed to equal to that of the font, the file is used for.
 The format is:</p>
-<div class="highlight-python"><div class="highlight"><pre>EM &lt;T&gt; decimal value
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EM</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">decimal</span> <span class="n">value</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -181,7 +184,7 @@ The format is:</p>
 <h3><a class="toc-backref" href="#id3">Comments and Whitespace</a><a class="headerlink" href="#comments-and-whitespace" title="Permalink to this headline">¶</a></h3>
 <p>Anything which is outside a block describing a lookup, the script table and feature table is ignored. That means you can use lines between these blocks as a place to put comments, such as reminders what lookups do.
 If needed it is possible to insert comments inside lookup blocks by having lines start with the percent sign:</p>
-<div class="highlight-python"><div class="highlight"><pre>% this is a comment.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">comment</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Blank lines and white space are ignored.</p>
@@ -195,10 +198,10 @@ table then it is possible to refer to glyphs by Unicode or by glyph index.</p>
 hexadecimal Unicode. To refer to a glyph by index use a <em>#</em> followed by a space
 followed by the index in decimal. For example: in a normal Latin font in
 standard order the lowercase <em>a</em> can be referred to in the following ways:</p>
-<div class="highlight-python"><div class="highlight"><pre>a
-U 0061
-u 0061
-# 68
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span>
+<span class="n">U</span> <span class="mi">0061</span>
+<span class="n">u</span> <span class="mi">0061</span>
+<span class="c1"># 68</span>
 </pre></div>
 </div>
 <p>When decompiling a table to OTL Source format, a tool should use the
@@ -210,11 +213,11 @@ glyphs in any of these 3 formats are referred to as <strong>&lt;Gl&gt;</strong>.
 <div class="section" id="lookups">
 <h3><a class="toc-backref" href="#id5">Lookups</a><a class="headerlink" href="#lookups" title="Permalink to this headline">¶</a></h3>
 <p>In OpenType Layout tables all info regarding substitutions and positioning is stored in so-called lookup tables: lists with glyphs and values. In text format of each of these lists begins with:</p>
-<div class="highlight-python"><div class="highlight"><pre>lookup &lt;T&gt; label &lt;T&gt; lookup type
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lookup</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">label</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">lookup</span> <span class="nb">type</span>
 </pre></div>
 </div>
 <p>and ends with:</p>
-<div class="highlight-python"><div class="highlight"><pre>lookup end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lookup</span> <span class="n">end</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -223,29 +226,29 @@ glyphs in any of these 3 formats are referred to as <strong>&lt;Gl&gt;</strong>.
 description of the content for example. In decompiled lookups it is the
 index number of the lookup. These labels are used in the feature table to
 tie the lookup to a feature. They are also used in context or chained
-context lookups to tie a <a class="reference internal" href="#contextrule"><span>rule</span></a> to a lookup.</dd>
+context lookups to tie a <a class="reference internal" href="#contextrule"><span class="std std-ref">rule</span></a> to a lookup.</dd>
 <dt><strong>Lookup Type</strong></dt>
 <dd><p class="first">Describes the type of lookup. The following keywords are used to identify
 the various lookup types:</p>
 <ul class="last simple">
-<li><strong>single</strong>: <a class="reference internal" href="#gsub-type-1"><span>GSUB lookup type 1</span></a> or <a class="reference internal" href="#gpos-type-1"><span>GPOS lookup type 1</span></a></li>
-<li><strong>multiple</strong>: <a class="reference internal" href="#gsub-type-2"><span>GSUB lookup type 2</span></a></li>
-<li><strong>alternate</strong>: <a class="reference internal" href="#gsub-type-3"><span>GSUB lookup type 3</span></a></li>
-<li><strong>ligature</strong>: <a class="reference internal" href="#gsub-type-4"><span>GSUB lookup type 4</span></a></li>
-<li><strong>pair</strong> or <strong>kernset</strong>: <a class="reference internal" href="#gpos-type-2"><span>GPOS lookup type 2</span></a></li>
-<li><strong>cursive</strong>: <a class="reference internal" href="#gpos-type-3"><span>GPOS lookup type 3</span></a></li>
-<li><strong>mark to base</strong>: <a class="reference internal" href="#gpos-type-4"><span>GPOS lookup type 4</span></a></li>
-<li><strong>mark to ligature</strong>: <a class="reference internal" href="#gpos-type-5"><span>GPOS lookup type 5</span></a></li>
-<li><strong>mark to mark</strong>: <a class="reference internal" href="#gpos-type-4"><span>GPOS lookup type 6</span></a></li>
-<li><strong>context</strong>: <a class="reference internal" href="#gsub-gpos-context"><span>GSUB lookup type 5 or GPOS lookup type 7</span></a></li>
-<li><strong>chained</strong>: <a class="reference internal" href="#gsub-gpos-chained"><span>GSUB lookup type 6 or GPOS lookup type 8</span></a></li>
-<li><strong>reversechained</strong>: <a class="reference internal" href="#gsub-type-8"><span>GSUB lookup type 8</span></a></li>
+<li><strong>single</strong>: <a class="reference internal" href="#gsub-type-1"><span class="std std-ref">GSUB lookup type 1</span></a> or <a class="reference internal" href="#gpos-type-1"><span class="std std-ref">GPOS lookup type 1</span></a></li>
+<li><strong>multiple</strong>: <a class="reference internal" href="#gsub-type-2"><span class="std std-ref">GSUB lookup type 2</span></a></li>
+<li><strong>alternate</strong>: <a class="reference internal" href="#gsub-type-3"><span class="std std-ref">GSUB lookup type 3</span></a></li>
+<li><strong>ligature</strong>: <a class="reference internal" href="#gsub-type-4"><span class="std std-ref">GSUB lookup type 4</span></a></li>
+<li><strong>pair</strong> or <strong>kernset</strong>: <a class="reference internal" href="#gpos-type-2"><span class="std std-ref">GPOS lookup type 2</span></a></li>
+<li><strong>cursive</strong>: <a class="reference internal" href="#gpos-type-3"><span class="std std-ref">GPOS lookup type 3</span></a></li>
+<li><strong>mark to base</strong>: <a class="reference internal" href="#gpos-type-4"><span class="std std-ref">GPOS lookup type 4</span></a></li>
+<li><strong>mark to ligature</strong>: <a class="reference internal" href="#gpos-type-5"><span class="std std-ref">GPOS lookup type 5</span></a></li>
+<li><strong>mark to mark</strong>: <a class="reference internal" href="#gpos-type-4"><span class="std std-ref">GPOS lookup type 6</span></a></li>
+<li><strong>context</strong>: <a class="reference internal" href="#gsub-gpos-context"><span class="std std-ref">GSUB lookup type 5 or GPOS lookup type 7</span></a></li>
+<li><strong>chained</strong>: <a class="reference internal" href="#gsub-gpos-chained"><span class="std std-ref">GSUB lookup type 6 or GPOS lookup type 8</span></a></li>
+<li><strong>reversechained</strong>: <a class="reference internal" href="#gsub-type-8"><span class="std std-ref">GSUB lookup type 8</span></a></li>
 </ul>
 </dd>
 <dt><strong>Lookup Flags</strong></dt>
 <dd><p class="first">Each lookup has four flags values and an optional mark attachment type
 associated with it, which can be set at the beginning of the lookup block:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">FlagType</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">FlagSetting</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FlagType</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">FlagSetting</span>
 </pre></div>
 </div>
 <p>The flag settings are <code class="docutils literal"><span class="pre">yes</span></code> or <code class="docutils literal"><span class="pre">no</span></code>. Flag types are:</p>
@@ -285,7 +288,7 @@ table are ignored, when set to <code class="docutils literal"><span class="pre">
 <dt><strong>Mark Attachment</strong></dt>
 <dd><p class="first">The Mark Attachment Type is an optional part of the lookup flags which can
 be used to have marks ignored except for one specified class of marks:</p>
-<div class="highlight-python"><div class="highlight"><pre>markattachmenttype &lt;T&gt; mark class number
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">markattachmenttype</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">mark</span> <span class="k">class</span> <span class="nc">number</span>
 </pre></div>
 </div>
 <p>For example, in Telugu, this is used where subscript consonant marks need to
@@ -318,15 +321,15 @@ filtering should be applied.</p>
 <h3><a class="toc-backref" href="#id6">Feature Table</a><a class="headerlink" href="#feature-table" title="Permalink to this headline">¶</a></h3>
 <p>The feature table is used to assign lookups to features. These assignments are
 done within a block starting with:</p>
-<div class="highlight-python"><div class="highlight"><pre>feature table begin
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">feature</span> <span class="n">table</span> <span class="n">begin</span>
 </pre></div>
 </div>
 <p>and ending with:</p>
-<div class="highlight-python"><div class="highlight"><pre>feature table end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">feature</span> <span class="n">table</span> <span class="n">end</span>
 </pre></div>
 </div>
 <p>Within the block assignments are done in one line for each feature:</p>
-<div class="highlight-python"><div class="highlight"><pre>index &lt;T&gt; feature tag &lt;T&gt; list of lookups
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">feature</span> <span class="n">tag</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">lookups</span>
 </pre></div>
 </div>
 <p>The index is a number starting with 0 for the first entry. These numbers are
@@ -337,7 +340,7 @@ in the OpenType specification.</p>
 <p>The list of lookups contains the label of one or more lookup tables, separated
 by commas. If for some reason (it is sometimes necessary) to declare a feature
 without lookups, then a hyphen takes in the position of the list.</p>
-<p><a class="reference download internal" href="downloads/featuretable.txt"><code class="xref download docutils literal"><span class="pre">Feature</span> <span class="pre">table</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/featuretable.txt" download=""><code class="xref download docutils literal"><span class="pre">Feature</span> <span class="pre">table</span> <span class="pre">example</span></code></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Normally features are expected to be listed in alphabetical order in feature lists, in the same way that they are stored in the font. But it is often easier to have a source file with the features in the order in which they are applied, i.e. following the lookup order. Features are expected to be sorted when the feature list is compiled.</p>
@@ -347,15 +350,15 @@ without lookups, then a hyphen takes in the position of the list.</p>
 <h3><a class="toc-backref" href="#id7">Script Table</a><a class="headerlink" href="#script-table" title="Permalink to this headline">¶</a></h3>
 <p>The script table is used to assign features to scripts or languages. These
 assignments are done within a block starting with:</p>
-<div class="highlight-python"><div class="highlight"><pre>script table begin
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">script</span> <span class="n">table</span> <span class="n">begin</span>
 </pre></div>
 </div>
 <p>and (predictably) ending with:</p>
-<div class="highlight-python"><div class="highlight"><pre>script table end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">script</span> <span class="n">table</span> <span class="n">end</span>
 </pre></div>
 </div>
 <p>Within the block assignments are done in one line for each script/language:</p>
-<div class="highlight-python"><div class="highlight"><pre>script tag &lt;T&gt; language tag &lt;T&gt; requiredFeature &lt;T&gt; list of features
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">script</span> <span class="n">tag</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">language</span> <span class="n">tag</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">requiredFeature</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">features</span>
 </pre></div>
 </div>
 <p>The script tag is one of the four character script tags as they are published
@@ -373,49 +376,49 @@ sometimes necessary to have an entry of a particular script in either GPOS or
 GSUB, although there are no features using that table, but without the entry
 the features in the other table are ignored. In that case the entry in the list
 of features field can be empty as well.</p>
-<p><a class="reference download internal" href="downloads/scripttable.txt"><code class="xref download docutils literal"><span class="pre">Script</span> <span class="pre">table</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/scripttable.txt" download=""><code class="xref download docutils literal"><span class="pre">Script</span> <span class="pre">table</span> <span class="pre">example</span></code></a></p>
 <hr class="docutils" />
 <div class="section" id="single-substitution">
 <span id="gsub-type-1"></span><h4>single (substitution)<a class="headerlink" href="#single-substitution" title="Permalink to this headline">¶</a></h4>
 <p>Two entries per line; replaces the input glyph by the output glyph:</p>
-<div class="highlight-python"><div class="highlight"><pre>&lt;input Gl&gt; &lt;T&gt; &lt;output Gl&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">input</span> <span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">Gl</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gsubsingle.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">single</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubsingle.txt" download=""><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">single</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="multiple-substitution">
 <span id="gsub-type-2"></span><h4>multiple (substitution)<a class="headerlink" href="#multiple-substitution" title="Permalink to this headline">¶</a></h4>
 <p>At last two entries per line; replaces the input glyph by one or more output glyphs:</p>
-<div class="highlight-python"><div class="highlight"><pre>&lt;input Gl&gt; &lt;T&gt; &lt;output Gl 1&gt; &lt;T&gt; &lt;output Gl 2&gt; ....
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">input</span> <span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">Gl</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">Gl</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="o">....</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gsubmultiple.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">multiple</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubmultiple.txt" download=""><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">multiple</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="alternate-substitution">
 <span id="gsub-type-3"></span><h4>alternate (substitution)<a class="headerlink" href="#alternate-substitution" title="Permalink to this headline">¶</a></h4>
 <p>At least two entries per line; Replaces the input glyph by one of the output glyphs:</p>
-<div class="highlight-python"><div class="highlight"><pre>&lt;input Gl&gt; &lt;T&gt; &lt;output Gl 1&gt; &lt;T&gt; &lt;output Gl 2&gt; ....
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">input</span> <span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">Gl</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">Gl</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="o">....</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gsubalternate.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">alternate</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubalternate.txt" download=""><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">alternate</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="ligature-substitution">
 <span id="gsub-type-4"></span><h4>ligature (substitution)<a class="headerlink" href="#ligature-substitution" title="Permalink to this headline">¶</a></h4>
 <p>At least two entries per line; Replaces the input glyphs by one ligature (the first entry):</p>
-<div class="highlight-python"><div class="highlight"><pre>&lt;ligature Gl&gt; &lt;T&gt; &lt;input Gl 1&gt; &lt;T&gt; &lt;input Gl 2&gt; ....
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ligature</span> <span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nb">input</span> <span class="n">Gl</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nb">input</span> <span class="n">Gl</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="o">....</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gsubligature.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">ligature</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubligature.txt" download=""><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">ligature</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="single-positioning">
 <span id="gpos-type-1"></span><h4>single (positioning)<a class="headerlink" href="#single-positioning" title="Permalink to this headline">¶</a></h4>
 <p>Keyword and two entries per line: The type of positioning (advance modification
-of x/y movement) is specified by the <a class="reference internal" href="#postype"><span>keyword</span></a>, the amount by
-the <a class="reference internal" href="#value"><span>value</span></a>:</p>
-<div class="highlight-python"><div class="highlight"><pre>position type &lt;T&gt; &lt;Gl&gt; &lt;T&gt; value
+of x/y movement) is specified by the <a class="reference internal" href="#postype"><span class="std std-ref">keyword</span></a>, the amount by
+the <a class="reference internal" href="#value"><span class="std std-ref">value</span></a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="nb">type</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">value</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gpossingle.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">single</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gpossingle.txt" download=""><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">single</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="pair-or-kernset-positioning">
 <span id="gpos-type-2"></span><h4>pair or kernset (positioning)<a class="headerlink" href="#pair-or-kernset-positioning" title="Permalink to this headline">¶</a></h4>
@@ -425,26 +428,26 @@ suited for small tables. The second is assigning glyphs to <em>classes</em>. The
 kerning values are declared for combinations of these classes. This format is
 best suited for larger kern tables with many accented characters sharing
 metrics. The glyph list format uses lines in this format:</p>
-<div class="highlight-python"><div class="highlight"><pre>position type &lt;T&gt; &lt;LeftGl&gt; &lt;T&gt; &lt;RightGl&gt; &lt;T&gt; value
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="nb">type</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">LeftGl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">RightGl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">value</span>
 </pre></div>
 </div>
 <p>Keyword and three entries per line. The type of positioning (advance
-modification of x/y movement) is specified by the <a class="reference internal" href="#postype"><span>keyword</span></a>, the
-amount by the <a class="reference internal" href="#value"><span>value</span></a>. The Left glyph needs to be interpreted as
+modification of x/y movement) is specified by the <a class="reference internal" href="#postype"><span class="std std-ref">keyword</span></a>, the
+amount by the <a class="reference internal" href="#value"><span class="std std-ref">value</span></a>. The Left glyph needs to be interpreted as
 being the first in the text (in case of right-to-left fonts it is therefore the
 right glyph).</p>
 <p>The class format starts by two lists assigning glyphs to left/first and
 right/second classes. It is then followed by a list similar to the glyph list
 format, with class indices taking the place of glyph references:</p>
-<div class="highlight-python"><div class="highlight"><pre>firstclass definition begin
-&lt;Gl&gt; &lt;T&gt; class
-class definition end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">firstclass</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="k">class</span>
+<span class="nc">class</span> <span class="n">definition</span> <span class="n">end</span>
 
-secondclass definition begin
-&lt;Gl&gt; &lt;T&gt; class
-class definition end
+<span class="n">secondclass</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="k">class</span>
+<span class="nc">class</span> <span class="n">definition</span> <span class="n">end</span>
 
-position type &lt;T&gt; firstClass &lt;T&gt; secondClass &lt;T&gt; value
+<span class="n">position</span> <span class="nb">type</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">firstClass</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">secondClass</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">value</span>
 </pre></div>
 </div>
 <p>Class definitions have two entries per line, glyph reference and class index.
@@ -453,61 +456,60 @@ assigned to another class.</p>
 <p>A <code class="docutils literal"><span class="pre">kernset</span></code> is a combination of the <code class="docutils literal"><span class="pre">glyph</span></code> and <code class="docutils literal"><span class="pre">class</span></code> formats: a
 subtable of glyph pairs precedes a subtable of class pairs, with the glyph
 pairs acting as &#8220;exceptions&#8221; to the class pair definitions.</p>
-<p><a class="reference download internal" href="downloads/gpospairglyph.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">pair</span> <span class="pre">(glyph)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="downloads/gpospairclass.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">pair</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="downloads/gposkernset.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">kernset</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gpospairglyph.txt" download=""><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">pair</span> <span class="pre">(glyph)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gpospairclass.txt" download=""><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">pair</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gposkernset.txt" download=""><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">kernset</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="cursive-positioning">
 <span id="gpos-type-3"></span><h4>cursive (positioning)<a class="headerlink" href="#cursive-positioning" title="Permalink to this headline">¶</a></h4>
-<p>The Anchor type keyword is either <code class="docutils literal"><span class="pre">entry</span></code> for where a stroke enters the glyph or <code class="docutils literal"><span class="pre">exit</span></code> where a stroke leaves the glyph. The <a class="reference internal" href="#anchor"><span>anchor coordinate</span></a> is the location of the anchor. The index of the point of the outline at the coordinate is optional.:</p>
-<div class="highlight-python"><div class="highlight"><pre>Anchor type &lt;T&gt; &lt;Gl&gt; &lt;T&gt; anchorCoordinate &lt;T&gt; pointIndex
+<p>The Anchor type keyword is either <code class="docutils literal"><span class="pre">entry</span></code> for where a stroke enters the glyph or <code class="docutils literal"><span class="pre">exit</span></code> where a stroke leaves the glyph. The <a class="reference internal" href="#anchor"><span class="std std-ref">anchor coordinate</span></a> is the location of the anchor. The index of the point of the outline at the coordinate is optional.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Anchor</span> <span class="nb">type</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">anchorCoordinate</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">pointIndex</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gposcursive.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">cursive</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gposcursive.txt" download=""><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">cursive</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="mark-to-base-and-mark-to-mark-positioning">
 <span id="gpos-type-4"></span><h4>mark to base and mark to mark (positioning)<a class="headerlink" href="#mark-to-base-and-mark-to-mark-positioning" title="Permalink to this headline">¶</a></h4>
-<p>The GlyphType keyword is either <code class="docutils literal"><span class="pre">base</span></code> or <code class="docutils literal"><span class="pre">mark</span></code>. It is followed by the glyph reference and the Anchor class, which is a decimal index number. The <a class="reference internal" href="#anchor"><span>coordinate</span></a> of the anchor point is required, but the index of the point in the outline at the coordinate is optional:</p>
-<div class="highlight-python"><div class="highlight"><pre>GlyphType &lt;T&gt; &lt;Gl&gt; &lt;T&gt; anchorClass &lt;T&gt; anchorCoordinate &lt;T&gt; pointIndex
+<p>The GlyphType keyword is either <code class="docutils literal"><span class="pre">base</span></code> or <code class="docutils literal"><span class="pre">mark</span></code>. It is followed by the glyph reference and the Anchor class, which is a decimal index number. The <a class="reference internal" href="#anchor"><span class="std std-ref">coordinate</span></a> of the anchor point is required, but the index of the point in the outline at the coordinate is optional:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GlyphType</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">anchorClass</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">anchorCoordinate</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">pointIndex</span>
 </pre></div>
 </div>
 <p>In a mark to mark lookup, the marks that other marks are attached to (&#8220;base marks&#8221;) use the <code class="docutils literal"><span class="pre">base</span></code> keyword.</p>
 <p>In scripts such as the Indics where ligatures are used as single entities, accent positioning on these glyphs can be done with a mark to base rather than a mark to ligature lookup.</p>
 <p>Within a lookup marks can belong to one class only. If there is more than one class of marks, all base glyphs are expected to have an anchor for each class. For marks with several anchors or when base glyphs do not have anchors for all classes of marks, it is recommended to use separate lookups for the classes.</p>
-<p><a class="reference download internal" href="downloads/gposmarktobase.txt"><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">mark</span> <span class="pre">to</span> <span class="pre">base/mark</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gposmarktobase.txt" download=""><code class="xref download docutils literal"><span class="pre">GPOS</span> <span class="pre">mark</span> <span class="pre">to</span> <span class="pre">base/mark</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="mark-to-ligature-positioning">
 <span id="gpos-type-5"></span><h4>mark to ligature (positioning)<a class="headerlink" href="#mark-to-ligature-positioning" title="Permalink to this headline">¶</a></h4>
 <p>This type of lookup differs from mark to base in that it allows marks to be positioned over a specific component part of a ligature glyph.
 The declaration of attachment points on marks is identical to that in mark to base lookups:</p>
-<div class="highlight-python"><div class="highlight"><pre>mark &lt;T&gt; &lt;Gl&gt; &lt;T&gt; anchorClass &lt;T&gt; anchorCoordinate &lt;T&gt; pointIndex
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mark</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">anchorClass</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">anchorCoordinate</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">pointIndex</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">mark</span></code> keyword is followed by the glyph reference and the Anchor class. The coordinate of the anchor point is required, but the index of the point in the outline at the coordinate is optional.</p>
 <p>The declarations for the attachment points include the index of the component, and the total number of components which the ligature represents:</p>
-<div class="highlight-python"><div class="highlight"><pre>ligature &lt;T&gt; &lt;Gl&gt; &lt;T&gt; componentIndex &lt;T&gt; componentCount &lt;T&gt; anchorClass &lt;T&gt; anchorCoordinate &lt;T&gt; pointIndex
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ligature</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">componentIndex</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">componentCount</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">anchorClass</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">anchorCoordinate</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">pointIndex</span>
 </pre></div>
 </div>
 <p>The index used for the first component is 1.</p>
 <p>Fonts can support any number of anchor classes. However marks can only have 1 anchor point and belong to 1 class only within a single lookup. Use separate lookups for cases where marks have more than one attachment point for use in a mark to ligature table.</p>
 <p>If the lowest anchor number isn&#8217;t 0 or if there are gaps in the class numbering, the font tool should renumber or this needs to be done manually.</p>
-<p><a class="reference download internal" href="downloads/mark-to-ligature.txt"><code class="xref download docutils literal"><span class="pre">mark</span> <span class="pre">to</span> <span class="pre">ligature</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="context-substitution-and-positioning">
 <span id="gsub-gpos-context"></span><h4>context (substitution and positioning)<a class="headerlink" href="#context-substitution-and-positioning" title="Permalink to this headline">¶</a></h4>
-<p>This type of lookup is not used to directly list positioning or substitution actions. In a context table a set of rules is listed, where separate lookups are applied to certain glyph sequences. The general format of a <a class="reference internal" href="#contextrule"><span>rule</span></a> is:</p>
-<div class="highlight-python"><div class="highlight"><pre>context type &lt;T&gt; inputSequence &lt;T&gt; action1 &lt;T&gt; action2 ...
+<p>This type of lookup is not used to directly list positioning or substitution actions. In a context table a set of rules is listed, where separate lookups are applied to certain glyph sequences. The general format of a <a class="reference internal" href="#contextrule"><span class="std std-ref">rule</span></a> is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">context</span> <span class="nb">type</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">inputSequence</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">action1</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">action2</span> <span class="o">...</span>
 </pre></div>
 </div>
 <p>First the type of context is declared. The input sequence consists of two or more entries, each representing a glyph or one of a group of glyphs. There can be one or more action items, which are used to declare what lookup is applied to which member of the sequence. These lookups follow the context lookup they are referenced by.</p>
 <p>There are three types of contexts, each having its own keyword.</p>
 <p><code class="docutils literal"><span class="pre">glyph</span></code>: In this type the input sequence is a list of two or more glyph references separated by commas. For example to apply a kerning positioning to a F in the context in which F is followed by a period and a quoteright:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">glyph</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">F</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">quoteright</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="o">-</span><span class="n">kern</span><span class="o">-</span><span class="n">lookup</span><span class="o">-</span><span class="n">label</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">glyph</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">F</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">quoteright</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="o">-</span><span class="n">kern</span><span class="o">-</span><span class="n">lookup</span><span class="o">-</span><span class="n">label</span>
 </pre></div>
 </div>
 <p>In this type of context no additional information is required.</p>
 <p><code class="docutils literal"><span class="pre">class</span></code>: In this type the input sequence is a list of two or more glyph classes separated by commas. The list of rules is preceded by a class definition. For example to apply a kerning positioning to a F in the context in which F is followed by a period or a comma and a quoteright or a quotesingle:</p>
-<div class="highlight-python"><div class="highlight"><pre>class definition begin
+<div class="highlight-default"><div class="highlight"><pre><span></span>class definition begin
 F &lt;T&gt; 1
 period &lt;T&gt; 2
 comma &lt;T&gt; 2
@@ -520,27 +522,26 @@ class &lt;T&gt; 1, 2, 3 &lt;T&gt; 1,F-kern-lookup-label
 </div>
 <p>Start numbering classes by 1. the class 0 can be used to refer to any glyph not classified otherwise.</p>
 <p><code class="docutils literal"><span class="pre">coverage</span></code>: In this type it is possible to have one rule per sub-table only. The rule is preceded by two or more coverage tables, which are lists of glyphs. The input sequence refers to these lists. This works a bit like the class format, with the difference that a glyph can be in more than one list/class. The example with the F would look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>coverage definition begin &lt;T&gt; 0
-F
-coverage definition end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">coverage</span> <span class="n">definition</span> <span class="n">begin</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">F</span>
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">end</span>
 
-coverage definition begin &lt;T&gt; 1
-period
-comma
-coverage definition end
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">begin</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span>
+<span class="n">period</span>
+<span class="n">comma</span>
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">end</span>
 
-coverage definition begin &lt;T&gt; 2
-quoteleft
-quotesingle
-coverage definition end
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">begin</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">2</span>
+<span class="n">quoteleft</span>
+<span class="n">quotesingle</span>
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">end</span>
 
-coverage &lt;T&gt; 1,F-kern-lookup-label
+<span class="n">coverage</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="o">-</span><span class="n">kern</span><span class="o">-</span><span class="n">lookup</span><span class="o">-</span><span class="n">label</span>
 </pre></div>
 </div>
 <p>Note that in the rule there is no entry for the sequence, because there is only one sequence possible. Each coverage table has an index number, starting with zero for the first.</p>
-<p><a class="reference download internal" href="downloads/contextclass.txt"><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="downloads/contextcoverage.txt"><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(coverage)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="downloads/context-glyph.txt"><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(glyph)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/contextclass.txt" download=""><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/contextcoverage.txt" download=""><code class="xref download docutils literal"><span class="pre">context</span> <span class="pre">(coverage)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="chained-substitution-and-positioning">
 <span id="gsub-gpos-chained"></span><h4>chained (substitution and positioning)<a class="headerlink" href="#chained-substitution-and-positioning" title="Permalink to this headline">¶</a></h4>
@@ -549,7 +550,7 @@ actions. In a context table a set of rules is listed, where separate lookups
 are applied to certain glyph sequences. It differs from the context lookup in
 that the context from the glyphs that are modified is stored separately: a
 chain of contexts rather than one context. The general format of a rule is:</p>
-<div class="highlight-python"><div class="highlight"><pre>context type &lt;T&gt; backtrackSequence &lt;T&gt; inputSequence &lt;T&gt; lookaheadSequence &lt;T&gt; action1 &lt;T&gt; action2 ...
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">context</span> <span class="nb">type</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">backtrackSequence</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">inputSequence</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">lookaheadSequence</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">action1</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">action2</span> <span class="o">...</span>
 </pre></div>
 </div>
 <p>First the type of context is declared. The input sequence consists of one or
@@ -564,70 +565,69 @@ lookup is applied to which member of the sequence. These lookups follow the
 context lookup they are referenced by.</p>
 <p>There are three types of contexts, each having its own keyword.</p>
 <p><code class="docutils literal"><span class="pre">glyph</span></code>: In this type the sequences are lists of one or more glyph references separated by commas. For example to apply a kerning positioning to a period in the context in which F is followed by a period and a quoteright:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">glyph</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">F</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">period</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">quoteright</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="o">-</span><span class="n">kern</span><span class="o">-</span><span class="n">lookup</span><span class="o">-</span><span class="n">label</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">glyph</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">F</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">period</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">quoteright</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="o">-</span><span class="n">kern</span><span class="o">-</span><span class="n">lookup</span><span class="o">-</span><span class="n">label</span>
 </pre></div>
 </div>
 <p>In this type of context no additional information is required.</p>
 <p><code class="docutils literal"><span class="pre">class-chain</span></code>: In this type the sequence are lists of one or more glyph classes separated by commas. The list of rules is preceded by a set of class definition. For example to apply a kerning positioning to a comma or period in the context in which F is followed by a period or a comma and a quoteright or a quotesingle:</p>
-<div class="highlight-python"><div class="highlight"><pre>backtrackclass definition begin
-F &lt;T&gt; 1
-class definition end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">backtrackclass</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="n">F</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span>
+<span class="k">class</span> <span class="nc">definition</span> <span class="n">end</span>
 
-class definition begin
-period &lt;T&gt; 1
-comma &lt;T&gt; 1
-class definition end
+<span class="k">class</span> <span class="nc">definition</span> <span class="n">begin</span>
+<span class="n">period</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span>
+<span class="n">comma</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span>
+<span class="k">class</span> <span class="nc">definition</span> <span class="n">end</span>
 
-lookaheadclass definition begin
-quoteleft &lt;T&gt; 1
-quotesingle &lt;T&gt; 1
-class definition end
+<span class="n">lookaheadclass</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="n">quoteleft</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span>
+<span class="n">quotesingle</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span>
+<span class="k">class</span> <span class="nc">definition</span> <span class="n">end</span>
 
-class-chain &lt;T&gt; 1 &lt;T&gt; 1 &lt;T&gt; 1 &lt;T&gt; 1,F-kern-lookup-label
+<span class="n">class</span><span class="o">-</span><span class="n">chain</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="o">-</span><span class="n">kern</span><span class="o">-</span><span class="n">lookup</span><span class="o">-</span><span class="n">label</span>
 </pre></div>
 </div>
-<p>Start numbering classes by 1. The class 0 can be used to refer to any glyph not classified otherwise. The backtrack and lookahead definitions are optional, but at least one of them has to be present. More about this <a class="reference internal" href="#more-chained"><span>here...</span></a></p>
+<p>Start numbering classes by 1. The class 0 can be used to refer to any glyph not classified otherwise. The backtrack and lookahead definitions are optional, but at least one of them has to be present. More about this <a class="reference internal" href="#more-chained"><span class="std std-ref">here...</span></a></p>
 <p><code class="docutils literal"><span class="pre">coverage</span></code>: In this type it is possible to have one rule per sub-table only. The rule is preceded by two or more coverage tables, which are lists of glyphs. The sequence refer to these lists. This works a bit like the class format, with the difference that a glyph can be in more than one list/class. The example with the F would look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>backtrackcoverage definition begin
-F
-coverage definition end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">backtrackcoverage</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="n">F</span>
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">end</span>
 
-inputcoverage definition begin
-period
-comma
-coverage definition end
+<span class="n">inputcoverage</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="n">period</span>
+<span class="n">comma</span>
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">end</span>
 
-lookaheadcoverage definition begin
-quoteleft
-quotesingle
-coverage definition end
+<span class="n">lookaheadcoverage</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="n">quoteleft</span>
+<span class="n">quotesingle</span>
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">end</span>
 
-coverage &lt;T&gt; 1,F-kern-lookup-label
+<span class="n">coverage</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="o">-</span><span class="n">kern</span><span class="o">-</span><span class="n">lookup</span><span class="o">-</span><span class="n">label</span>
 </pre></div>
 </div>
 <p>Note that in the rule there is no entry for the sequence, because there is only one sequence possible. There can be any number of these coverage definitions. At least one inputcoverage table and at least one of the others are required.</p>
-<p><a class="reference download internal" href="downloads/chainedclass.txt"><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="downloads/chainedcoverage.txt"><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(coverage)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
-<p><a class="reference download internal" href="downloads/chained-glyph.txt"><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(glyph)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/chainedclass.txt" download=""><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(class)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/chainedcoverage.txt" download=""><code class="xref download docutils literal"><span class="pre">chained</span> <span class="pre">(coverage)</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="reversechained-substitution">
 <span id="gsub-type-8"></span><h4>reversechained (substitution)<a class="headerlink" href="#reversechained-substitution" title="Permalink to this headline">¶</a></h4>
 <p>This format combines chained context rules with <em>single</em> substitutions within a lookup. Either a backtrack coverage definition or lookahead coverage definition (or both) defining glyphs for the contexts, followed by <em>single</em> (glyph) substitution definitions:</p>
-<div class="highlight-python"><div class="highlight"><pre>backtrackcoverage definition begin
-&lt;Gl1&gt;
-...
-&lt;GLn&gt;
-coverage definition end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">backtrackcoverage</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl1</span><span class="o">&gt;</span>
+<span class="o">...</span>
+<span class="o">&lt;</span><span class="n">GLn</span><span class="o">&gt;</span>
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">end</span>
 
-lookaheadcoverage definition begin
-&lt;Gl1&gt;
-...
-&lt;Gln&gt;
-coverage definition end
+<span class="n">lookaheadcoverage</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl1</span><span class="o">&gt;</span>
+<span class="o">...</span>
+<span class="o">&lt;</span><span class="n">Gln</span><span class="o">&gt;</span>
+<span class="n">coverage</span> <span class="n">definition</span> <span class="n">end</span>
 
-&lt;input Gl1&gt; &lt;T&gt; &lt;output Gl1&gt;
-...
-&lt;input Gln&gt; &lt;T&gt; &lt;output Gln&gt;
+<span class="o">&lt;</span><span class="nb">input</span> <span class="n">Gl1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">Gl1</span><span class="o">&gt;</span>
+<span class="o">...</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="n">Gln</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">output</span> <span class="n">Gln</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>It is important to note that for <code class="docutils literal"><span class="pre">reversechained</span></code> lookups, processing of the
@@ -635,7 +635,7 @@ input glyph sequence goes from the end to start, opposite of other lookup
 types. This type is designed for Arabic and scripts like it where the shape of
 a glyph is determined by a following glyph. See the <a class="reference external" href="https://www.microsoft.com/typography/otspec/GSUB.htm#RCCS">OpenType specification</a> for more
 information.</p>
-<p><a class="reference download internal" href="downloads/gsubreversechanined.txt"><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">reversechained</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gsubreversechanined.txt" download=""><code class="xref download docutils literal"><span class="pre">GSUB</span> <span class="pre">reversechained</span> <span class="pre">lookup</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="shared-by-various-lookups">
 <h4>Shared by various lookups<a class="headerlink" href="#shared-by-various-lookups" title="Permalink to this headline">¶</a></h4>
@@ -647,7 +647,7 @@ information.</p>
 <dt><strong>Position Type</strong></dt>
 <dd><p class="first">The following keywords are used to describe the various positioning types
 used in GPOS table entries:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">positionType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;...</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">positionType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;...</span>
 </pre></div>
 </div>
 <p>Position types are:</p>
@@ -751,7 +751,7 @@ is one.</p>
 GSUB, are defined. This includes things like glyph categorization (Base, Mark,
 Ligature, etc.), anchor points, ligature carets, and mark categorization.</p>
 <p>Similar to GSUB and GPOS, the first line of a text file representing a GDEF is:</p>
-<div class="highlight-python"><div class="highlight"><pre>FontDame GDEF table
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FontDame</span> <span class="n">GDEF</span> <span class="n">table</span>
 </pre></div>
 </div>
 <div class="section" id="glyph-classes">
@@ -767,24 +767,24 @@ Classes can be a number from 1 to 4:</p>
 </ul>
 <p>Glyphs not explicitly assigned to a class are considered to be in class 0 (&#8220;no
 class&#8221;). The syntax for defining glyph classes is:</p>
-<div class="highlight-python"><div class="highlight"><pre>class definition begin
-&lt;Gl&gt; &lt;T&gt; &lt;classNumber&gt;
-class definition end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">definition</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">classNumber</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">definition</span> <span class="n">end</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gdefclasses.txt"><code class="xref download docutils literal"><span class="pre">glyph</span> <span class="pre">class</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefclasses.txt" download=""><code class="xref download docutils literal"><span class="pre">glyph</span> <span class="pre">class</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="attachment-point-list">
 <h4>Attachment Point List<a class="headerlink" href="#attachment-point-list" title="Permalink to this headline">¶</a></h4>
 <p>Attachment (anchor) points are point numbers on the glyph outline which can be
 used as references for positioning glyphs. Define anchor points with a glyph
 reference followed by one or more point numbers, separated by &lt;T&gt;:</p>
-<div class="highlight-python"><div class="highlight"><pre>attachment list begin
-&lt;Gl&gt; &lt;T&gt; &lt;point1&gt; &lt;T&gt; &lt;point2&gt; ...
-attachment list end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">attachment</span> <span class="nb">list</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">point1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">point2</span><span class="o">&gt;</span> <span class="o">...</span>
+<span class="n">attachment</span> <span class="nb">list</span> <span class="n">end</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gdefattach.txt"><code class="xref download docutils literal"><span class="pre">attachment</span> <span class="pre">point</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefattach.txt" download=""><code class="xref download docutils literal"><span class="pre">attachment</span> <span class="pre">point</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="ligature-caret-lists">
 <h4>Ligature Caret Lists<a class="headerlink" href="#ligature-caret-lists" title="Permalink to this headline">¶</a></h4>
@@ -796,12 +796,12 @@ glyph.</p>
 <p>Ligature carets are defined with a glyph reference, followed by a number
 designating the number of carets, then that number of integers which are
 x-coordinate values, defining the caret positions:</p>
-<div class="highlight-python"><div class="highlight"><pre>carets begin
-&lt;Gl&gt; &lt;T&gt; &lt;numberOfCarets&gt; &lt;T&gt; X1 &lt;T&gt; X2 ...
-carets end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">carets</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">numberOfCarets</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">X1</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">X2</span> <span class="o">...</span>
+<span class="n">carets</span> <span class="n">end</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gdefligcaret.txt"><code class="xref download docutils literal"><span class="pre">ligature</span> <span class="pre">caret</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefligcaret.txt" download=""><code class="xref download docutils literal"><span class="pre">ligature</span> <span class="pre">caret</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="mark-attachment-classes">
 <h4>Mark Attachment Classes<a class="headerlink" href="#mark-attachment-classes" title="Permalink to this headline">¶</a></h4>
@@ -811,12 +811,12 @@ lookups to ignore marks other than those that are part of the class specified
 by the <code class="docutils literal"><span class="pre">markattachmenttype</span></code> flag as described above. A mark can only belong
 to a single mark attachment class.</p>
 <p>Create mark attachment classes with a glyph reference and a class number, separated by &lt;T&gt;:</p>
-<div class="highlight-python"><div class="highlight"><pre>mark attachment class definition begin
-&lt;Gl&gt; &lt;T&gt; &lt;markClassNumber&gt;
-class definition end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mark</span> <span class="n">attachment</span> <span class="k">class</span> <span class="nc">definition</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">markClassNumber</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">definition</span> <span class="n">end</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gdefmarkattach.txt"><code class="xref download docutils literal"><span class="pre">mark</span> <span class="pre">attachment</span> <span class="pre">class</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefmarkattach.txt" download=""><code class="xref download docutils literal"><span class="pre">mark</span> <span class="pre">attachment</span> <span class="pre">class</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
 </div>
 <div class="section" id="mark-glyph-sets-mark-filtering-sets">
 <h4>Mark Glyph Sets (Mark Filtering Sets)<a class="headerlink" href="#mark-glyph-sets-mark-filtering-sets" title="Permalink to this headline">¶</a></h4>
@@ -827,12 +827,48 @@ glyph sets This allows greater flexibility when using sets in lookups with the
 <code class="docutils literal"><span class="pre">markfiltertype</span></code> flag as described above. However, like mark attachment
 classes, only a single set may be specified per lookup.</p>
 <p>To define mark filter sets, use a glyph reference followed by a set number. <strong>Begin set numbering at 0</strong> (font tools should automatically renumber and report if you forget, but most important is that any references to mark glyph sets in GSUB or GPOS lookups must reference the renumbered sets. Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre>markfilter set definition begin
-&lt;Gl&gt; &lt;T&gt; &lt;markSetNumber&gt;
-set definition end
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">markfilter</span> <span class="nb">set</span> <span class="n">definition</span> <span class="n">begin</span>
+<span class="o">&lt;</span><span class="n">Gl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">markSetNumber</span><span class="o">&gt;</span>
+<span class="nb">set</span> <span class="n">definition</span> <span class="n">end</span>
 </pre></div>
 </div>
-<p><a class="reference download internal" href="downloads/gdefmarkfilter.txt"><code class="xref download docutils literal"><span class="pre">markfilter</span> <span class="pre">set</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+<p><a class="reference download internal" href="downloads/gdefmarkfilter.txt" download=""><code class="xref download docutils literal"><span class="pre">markfilter</span> <span class="pre">set</span> <span class="pre">definition</span> <span class="pre">example</span></code></a></p>
+</div>
+</div>
+<div class="section" id="other-source-files">
+<h3><a class="toc-backref" href="#id9">Other Source Files</a><a class="headerlink" href="#other-source-files" title="Permalink to this headline">¶</a></h3>
+<p>Other table source files can be represented as Font Chef table. These files begin with a first line indicating Font Chef format and the table tag as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Font</span> <span class="n">Chef</span> <span class="n">Table</span> <span class="o">&lt;</span><span class="n">tag</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="cmap-table">
+<h4>cmap Table<a class="headerlink" href="#cmap-table" title="Permalink to this headline">¶</a></h4>
+<p>Following the tag entry on the first line are cmap subtable definitions. A subtable definition begins with a declaration of the form:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cmap</span> <span class="n">subtable</span> <span class="n">N</span>
+</pre></div>
+</div>
+<p>Next are a few lines indicating the platform, encoding, and language IDs and the format:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">platformID</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">N</span>
+<span class="n">encodingID</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">N</span>
+<span class="nb">format</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">N</span>
+<span class="n">language</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">N</span>
+</pre></div>
+</div>
+<p>Following the header information are 2 &lt;T&gt;-separated entries to designate the code-to-glyph relationship:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">xXXXX</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">glyphName</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>An optional 3rd column appears in dump files to indicate the glyph index. This column is ignored when loading:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>\<span class="c1">#N</span>
+</pre></div>
+</div>
+<p>At the end of the subtable is the token:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="n">subtable</span>
+</pre></div>
+</div>
+<p><a class="reference download internal" href="downloads/cmap.txt" download=""><code class="xref download docutils literal"><span class="pre">cmap</span> <span class="pre">example</span></code></a></p>
+<hr class="docutils" />
+<p>Copyright © 2015 Monotype Imaging Inc. <a class="reference external" href="http://www.monotype.com/">http://www.monotype.com/</a> All rights reserved.</p>
 </div>
 </div>
 </div>
@@ -847,13 +883,10 @@ set definition end
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">OpenType Layout Table Source 1.0.0 Documentation </a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">OpenType Layout Table Source 1.0.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-	<div class="footer" role="contentinfo">
-        Copyright &copy; 2015 Monotype Imaging Inc. All rights reserved.
-    </div>
     </div>
   </body>
 </html>
