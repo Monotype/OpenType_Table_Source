@@ -1,4 +1,4 @@
-lookup	LigMk0 mark to ligature
+lookup	LigMk0	mark to ligature
 
 mark	FathatanNS	0	281, 1388	0
 mark	DammatanNS	0	354, 1409	0
